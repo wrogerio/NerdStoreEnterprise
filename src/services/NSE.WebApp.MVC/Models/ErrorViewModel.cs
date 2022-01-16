@@ -1,11 +1,23 @@
-using System;
+using System.Collections.Generic;
 
 namespace NSE.WebApp.MVC.Models
 {
     public class ErrorViewModel
     {
-        public string RequestId { get; set; }
+        public int ErroCode { get; set; }
+        public string Titulo { get; set; }
+        public string Mensagem { get; set; }
+    }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    public class ResponseErrorMessages
+    {
+        public List<string> Mensagens { get; set; }
+    }
+
+    public class ResponseResult
+    {
+        public string title { get; set; }
+        public int status { get; set; }
+        public ResponseErrorMessages Errors { get; set; }
     }
 }
